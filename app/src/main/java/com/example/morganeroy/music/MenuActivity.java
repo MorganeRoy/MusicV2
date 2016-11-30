@@ -11,7 +11,7 @@ public class MenuActivity extends Activity {
 
     private Button musicButton;
     private Button optionButton;
-    private Button quitterButton;
+    private Button testButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,15 @@ public class MenuActivity extends Activity {
 
         optionButton = (Button) findViewById(R.id.button_option);
         optionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent option = new Intent(MenuActivity.this, OptionActivity.class);
+                startActivity(option);
+            }
+        });
+
+        testButton = (Button) findViewById(R.id.button_test);
+        testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent option = new Intent(MenuActivity.this, OptionActivity.class);
