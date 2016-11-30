@@ -13,18 +13,22 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Music"
         android:id="@+id/button_music"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true" />
+        android:background="@drawable/play"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="40dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Option"
         android:id="@+id/button_option"
-        android:layout_below="@+id/button_music"
-        android:layout_centerHorizontal="true" />
+        android:background="@drawable/option"
+        android:layout_alignBaseline="@+id/button_music"
+        android:layout_alignBottom="@+id/button_music"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp" />
 
 
 </RelativeLayout>
