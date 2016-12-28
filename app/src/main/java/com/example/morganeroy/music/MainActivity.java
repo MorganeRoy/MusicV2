@@ -16,10 +16,16 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Random;
+
 import android.widget.MediaController.MediaPlayerControl;
+
+import com.example.morganeroy.music.Database.SongBDD;
 import com.example.morganeroy.music.MusicService.MusicBinder;
 
 public class MainActivity extends Activity implements MediaPlayerControl{
+
+    private static SongBDD songBDD;
 
     private ArrayList<Song> songList;
     private ListView songView;
@@ -33,6 +39,9 @@ public class MainActivity extends Activity implements MediaPlayerControl{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        songBDD = new SongBDD(this);
+        songBDD.open();
 
         songView = (ListView)findViewById(R.id.song_list);
         songList = new ArrayList<Song>();
@@ -49,11 +58,11 @@ public class MainActivity extends Activity implements MediaPlayerControl{
         songView.setAdapter(songAdt);
 
         setController();
-
     }
 
     public void getSongList() {
         //Récupère les musics
+        Random random = new Random();
         ContentResolver musicResolver = getContentResolver();
         Uri musicUri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
         Cursor musicCursor = musicResolver.query(musicUri, null, null, null, null);
@@ -70,7 +79,7 @@ public class MainActivity extends Activity implements MediaPlayerControl{
                 long thisId = musicCursor.getLong(idColumn);
                 String thisTitle = musicCursor.getString(titleColumn);
                 String thisArtist = musicCursor.getString(artistColumn);
-                songList.add(new Song(thisId, thisTitle, thisArtist));
+                songList.add(new Song(thisId, thisTitle, thisArtist, random.nextFloat()));
             }
             while (musicCursor.moveToNext());
         }
@@ -233,6 +242,7 @@ public class MainActivity extends Activity implements MediaPlayerControl{
     protected void onDestroy() {
         stopService(playIntent);
         musicSrv=null;
+        songBDD.close();
         super.onDestroy();
     }
 

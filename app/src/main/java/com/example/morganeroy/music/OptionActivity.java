@@ -16,7 +16,7 @@ public class OptionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option);
 
-        retourButton = (Button) findViewById(R.id.button_retour);
+        retourButton = (Button)findViewById(R.id.button_retour);
         retourButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

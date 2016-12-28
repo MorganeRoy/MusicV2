@@ -40,7 +40,7 @@ public class MenuActivity extends Activity {
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent option = new Intent(MenuActivity.this, OptionActivity.class);
+                Intent option = new Intent(MenuActivity.this, FrequencyActivity.class);
                 startActivity(option);
             }
         });
