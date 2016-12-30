@@ -13,12 +13,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button_music"
-        android:background="@drawable/play"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="40dp" />
+        android:id="@+id/button_test"
+        android:background="@drawable/frequency"
+        android:layout_alignBaseline="@+id/button_music"
+        android:layout_alignBottom="@+id/button_music"
+        android:layout_alignStart="@+id/button_music"
+        android:layout_marginStart="95dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -27,14 +27,16 @@
         android:background="@drawable/option"
         android:layout_alignBaseline="@+id/button_music"
         android:layout_alignBottom="@+id/button_music"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="50dp" />
+        android:layout_toStartOf="@+id/button_music"
+        android:layout_marginEnd="21dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button_test"
-        android:background="@drawable/option"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/button_music"
+        android:background="@drawable/play"
+        android:layout_marginBottom="21dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

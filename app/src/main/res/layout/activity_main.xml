@@ -7,6 +7,14 @@
     android:background="#FFFFFF"
     tools:context=".MainActivity" >
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Retour"
+        android:id="@+id/button_retour"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
     <ListView
         android:id="@+id/song_list"
         android:layout_width="fill_parent"

@@ -12,6 +12,7 @@ import android.os.IBinder;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,6 +35,7 @@ public class MainActivity extends Activity implements MediaPlayerControl{
     private Intent playIntent;
     private boolean musicBound=false;
     private boolean paused=false, playbackPaused=false;
+    private Button retourButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +56,23 @@ public class MainActivity extends Activity implements MediaPlayerControl{
             }
         });
 
+        for( Song freq : songList){
+            songBDD.insertSong(freq);
+        }
+
         SongAdapter songAdt = new SongAdapter(this, songList);
         songView.setAdapter(songAdt);
 
         setController();
+
+        retourButton = (Button)findViewById(R.id.button_retour);
+        retourButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menu = new Intent(MainActivity.this, MenuActivity.class);
+                startActivity(menu);
+            }
+        });
     }
 
     public void getSongList() {

@@ -33,8 +33,8 @@ public class SongBDDHelper extends SQLiteOpenHelper {
     private static final String CREATE_DATABSE = "CREATE TABLE " + TABLE_SONG + "("
             + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COL_TITLE + " TEXT NOT NULL, "
-            + COL_ARTIST + "TEXT NOT NULL, "
-            + COL_VALUE + " FLOAT NOT NULL;)";
+            + COL_ARTIST + " TEXT NOT NULL, "
+            + COL_VALUE + " FLOAT NOT NULL);";
 
     private static final String DELETE_DATABASE = "DROP TABLE " + TABLE_SONG + ";";
 

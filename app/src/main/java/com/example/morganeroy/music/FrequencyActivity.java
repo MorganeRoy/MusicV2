@@ -1,25 +1,47 @@
 package com.example.morganeroy.music;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 
 import com.example.morganeroy.music.Database.SongBDD;
 
-public class FrequencyActivity extends Activity {
+import org.w3c.dom.Comment;
 
+import java.util.List;
 
-    SongBDD bdd;
+public class FrequencyActivity extends ListActivity {
+    private SongBDD datasource;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frequency);
 
-        bdd = new SongBDD(this);
+        datasource = new SongBDD(this);
+        datasource.open();
 
-        //On ouvre la base de données pour écrire dedans
-        bdd.open();
+        List<Song> values = datasource.getAllSongs();
 
 
+        // utilisez SimpleCursorAdapter pour afficher les
+        // éléments dans une ListView
+        ArrayAdapter<Song> adapter = new ArrayAdapter<Song>(this,
+                android.R.layout.simple_list_item_1, values);
+        setListAdapter(adapter);
+    }
+
+
+    @Override
+    protected void onResume() {
+        datasource.open();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        datasource.close();
+        super.onPause();
     }
 }

@@ -9,12 +9,12 @@ public class Song {
     private String artist;
     private float value;
 
-    public Song(String songTitle, String songArtist, float songValue) {
+    /*public Song(String songTitle, String songArtist, float songValue) {
         id = -1;
         title = songTitle;
         artist = songArtist;
         value = songValue;
-    }
+    }*/
 
     public Song(long songId, String songTitle, String songArtist, float songValue) {
         id = songId;
