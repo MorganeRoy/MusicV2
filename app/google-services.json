@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "268704204527",
+    "firebase_url": "https://music-master-fd47d.firebaseio.com",
+    "project_id": "music-master-fd47d",
+    "storage_bucket": "music-master-fd47d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268704204527:android:ecf29412016785b5",
+        "android_client_info": {
+          "package_name": "com.example.morganeroy.music"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268704204527-vgtk1p7s847i0re9jj715p4d1tvpnneo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.morganeroy.music",
+            "certificate_hash": "6AA51BB365A6FAC5B8DE5D2337FDAB16F8771E3F"
+          }
+        },
+        {
+          "client_id": "268704204527-5alqcgjmgssqtfrqh3el7virb250b0qe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVv4NBLmT0jyl_Wu-p3qxLTEJQdVXya3Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268704204527-5alqcgjmgssqtfrqh3el7virb250b0qe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

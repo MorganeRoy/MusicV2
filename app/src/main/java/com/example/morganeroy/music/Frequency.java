@@ -21,4 +21,6 @@ public class Frequency {
             frequency[i] = random.nextFloat();
         }
     }
+
+    public float[] get_freq(){return frequency;}
 }

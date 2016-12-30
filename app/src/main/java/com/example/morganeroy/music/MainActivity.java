@@ -56,9 +56,9 @@ public class MainActivity extends Activity implements MediaPlayerControl{
             }
         });
 
-        for( Song freq : songList){
+        /*for( Song freq : songList){
             songBDD.insertSong(freq);
-        }
+        }*/
 
         SongAdapter songAdt = new SongAdapter(this, songList);
         songView.setAdapter(songAdt);
