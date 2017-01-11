@@ -29,6 +29,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".OptionActivity" />
         <activity android:name=".FrequencyActivity"></activity>
+        <activity android:name=".GrapheActivity"></activity>
     </application>
 
 </manifest>

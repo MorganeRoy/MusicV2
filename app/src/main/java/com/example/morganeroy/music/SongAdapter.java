@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -54,5 +55,16 @@ public class SongAdapter extends BaseAdapter {
         songLay.setTag(position);
         return songLay;
     }
+
+    /*public View getGraph(int position, View convertView, ViewGroup parent){
+        RelativeLayout songLay = (RelativeLayout) songInf.inflate(R.layout.graphe_view, parent, false);
+        TextView songView = (TextView)songLay.findViewById(R.id.song_title);
+        TextView artistView = (TextView)songLay.findViewById(R.id.song_artist);
+        Song currSong = songs.get(position);
+        songView.setText(currSong.getTitle());
+        artistView.setText(currSong.getArtist());
+        songLay.setTag(position);
+        return songLay;
+    }*/
 
 }

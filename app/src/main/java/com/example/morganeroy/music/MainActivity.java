@@ -36,6 +36,8 @@ public class MainActivity extends Activity implements MediaPlayerControl{
     private boolean musicBound=false;
     private boolean paused=false, playbackPaused=false;
     private Button retourButton;
+    //private GrapheView grapheView;
+    private SongAdapter songAdt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +62,7 @@ public class MainActivity extends Activity implements MediaPlayerControl{
             songBDD.insertSong(freq);
         }*/
 
-        SongAdapter songAdt = new SongAdapter(this, songList);
+        songAdt = new SongAdapter(this, songList);
         songView.setAdapter(songAdt);
 
         setController();
@@ -175,6 +177,9 @@ public class MainActivity extends Activity implements MediaPlayerControl{
             setController();
             playbackPaused=false;
         }
+
+
+        //grapheView.setAdapter(songAdt);
         controller.show(0);
     }
 
@@ -229,6 +234,8 @@ public class MainActivity extends Activity implements MediaPlayerControl{
     @Override
     public void start() {
         musicSrv.go();
+        Intent option = new Intent(MainActivity.this, GrapheActivity.class);
+        startActivity(option);
     }
 
     @Override
