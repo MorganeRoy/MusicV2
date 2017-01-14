@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.os.CountDownTimer;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -22,8 +23,8 @@ public class GrapheView extends View {
     public GrapheView(Context context, int maxSize) {
         super(context);
 
+        //this.maxSize = maxSize;
         this.maxSize = maxSize;
-
         paint = new Paint();
         paint.setColor(Color.MAGENTA);
         paint.setStrokeWidth(3);
@@ -32,9 +33,15 @@ public class GrapheView extends View {
         graphPoints = new ArrayList<>();
     }
 
+
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+        if(graphPoints.isEmpty()){
+            return;
+        }
 
         int maxValue = graphPoints.get(0);
         for (int i = 1; i < graphPoints.size(); ++i) {
@@ -62,6 +69,9 @@ public class GrapheView extends View {
     }
 
     void clear() {
+        if(graphPoints.isEmpty()){
+            return;
+        }
         graphPoints.clear();
     }
 }

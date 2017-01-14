@@ -58,9 +58,10 @@ public class MainActivity extends Activity implements MediaPlayerControl{
             }
         });
 
-        /*for( Song freq : songList){
+        songBDD.deleteAll();
+        for( Song freq : songList){
             songBDD.insertSong(freq);
-        }*/
+        }
 
         songAdt = new SongAdapter(this, songList);
         songView.setAdapter(songAdt);
@@ -231,11 +232,13 @@ public class MainActivity extends Activity implements MediaPlayerControl{
         musicSrv.seek(pos);
     }
 
+
+    //Démarrer musique
     @Override
     public void start() {
         musicSrv.go();
-        Intent option = new Intent(MainActivity.this, GrapheActivity.class);
-        startActivity(option);
+        Intent graphe = new Intent(MainActivity.this, GrapheActivity.class);
+        startActivity(graphe);
     }
 
     @Override

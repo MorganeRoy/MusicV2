@@ -49,6 +49,14 @@ public class SongBDD {
         return dtb.update(SongBDDHelper.TABLE_SONG, values, SongBDDHelper.COL_ID + " = " + idToUpdate, null);
     }
 
+    public void deleteAll()
+    {
+        //SQLiteDatabase db= this.getWritableDatabase();
+        dtb.delete(SongBDDHelper.TABLE_SONG, null, null);
+
+    }
+
+
     public List<Song> getAllSongs() {
         ArrayList<Song> allSongs = new ArrayList<>();
         Cursor c = dtb.rawQuery("SELECT * FROM " + SongBDDHelper.TABLE_SONG + ";", null);
